@@ -2,7 +2,7 @@ import json
 import logging
 
 
-def save_data(data, filename: str) -> None:
+def save_data(data: any, filename: str) -> None:
     try:
         with open(filename, "w") as file:
             json.dump(data, file)
@@ -10,7 +10,7 @@ def save_data(data, filename: str) -> None:
         logging.info("There was an error saving the data")
 
 
-def load_data(filename: str):
+def load_data(filename: str) -> any:
     try:
         with open(filename, "r") as file:
             loaded_data = json.load(file)
